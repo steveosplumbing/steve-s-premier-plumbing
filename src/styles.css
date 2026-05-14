@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-display: "Oswald", "Bebas Neue", Impact, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -33,54 +33,62 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-copper: var(--copper);
-  --color-copper-glow: var(--copper-glow);
-  --color-brass: var(--brass);
+  --color-fire: var(--fire);
+  --color-fire-glow: var(--fire-glow);
+  --color-ice: var(--ice);
+  --color-ice-glow: var(--ice-glow);
   --color-ink: var(--ink);
 }
 
 :root {
   --radius: 0.5rem;
 
-  /* Luxury dark navy + copper palette */
-  --background: oklch(0.18 0.035 255);
-  --foreground: oklch(0.97 0.01 90);
-  --ink: oklch(0.13 0.03 255);
+  /* Brand: deep black, fire orange + electric ice blue */
+  --background: oklch(0.10 0.01 260);
+  --foreground: oklch(0.98 0.005 90);
+  --ink: oklch(0.06 0.01 260);
 
-  --card: oklch(0.22 0.04 255);
-  --card-foreground: oklch(0.97 0.01 90);
-  --popover: oklch(0.22 0.04 255);
-  --popover-foreground: oklch(0.97 0.01 90);
+  --card: oklch(0.14 0.012 260);
+  --card-foreground: oklch(0.98 0.005 90);
+  --popover: oklch(0.14 0.012 260);
+  --popover-foreground: oklch(0.98 0.005 90);
 
-  --primary: oklch(0.72 0.14 50); /* polished copper */
-  --primary-foreground: oklch(0.15 0.03 255);
-  --copper: oklch(0.68 0.15 45);
-  --copper-glow: oklch(0.82 0.13 65);
-  --brass: oklch(0.78 0.12 85);
+  /* Fire orange — primary brand */
+  --primary: oklch(0.72 0.20 45);
+  --primary-foreground: oklch(0.10 0.01 260);
+  --fire: oklch(0.68 0.21 40);
+  --fire-glow: oklch(0.82 0.18 60);
 
-  --secondary: oklch(0.27 0.04 255);
-  --secondary-foreground: oklch(0.97 0.01 90);
-  --muted: oklch(0.25 0.035 255);
-  --muted-foreground: oklch(0.72 0.02 90);
-  --accent: oklch(0.72 0.14 50);
-  --accent-foreground: oklch(0.15 0.03 255);
+  /* Ice electric blue — secondary brand */
+  --ice: oklch(0.78 0.16 235);
+  --ice-glow: oklch(0.88 0.13 220);
+
+  --secondary: oklch(0.18 0.015 260);
+  --secondary-foreground: oklch(0.98 0.005 90);
+  --muted: oklch(0.16 0.012 260);
+  --muted-foreground: oklch(0.72 0.015 250);
+  --accent: oklch(0.78 0.16 235);
+  --accent-foreground: oklch(0.10 0.01 260);
   --destructive: oklch(0.62 0.22 27);
-  --destructive-foreground: oklch(0.97 0.01 90);
-  --border: oklch(0.32 0.03 255);
-  --input: oklch(0.28 0.03 255);
-  --ring: oklch(0.72 0.14 50);
+  --destructive-foreground: oklch(0.98 0.005 90);
+  --border: oklch(0.24 0.015 260);
+  --input: oklch(0.20 0.015 260);
+  --ring: oklch(0.72 0.20 45);
 
-  --gradient-copper: linear-gradient(135deg, oklch(0.78 0.14 60), oklch(0.62 0.16 40));
-  --gradient-hero: linear-gradient(180deg, oklch(0.18 0.035 255 / 0.4) 0%, oklch(0.13 0.03 255 / 0.95) 100%);
-  --gradient-radial: radial-gradient(ellipse at top, oklch(0.28 0.06 255) 0%, oklch(0.13 0.03 255) 70%);
-  --shadow-copper: 0 20px 60px -20px oklch(0.68 0.15 45 / 0.5);
-  --shadow-elegant: 0 30px 80px -30px oklch(0 0 0 / 0.7);
-  --shadow-inset-gold: inset 0 1px 0 0 oklch(0.85 0.13 70 / 0.3);
+  --gradient-fire: linear-gradient(135deg, oklch(0.85 0.18 70), oklch(0.62 0.22 35));
+  --gradient-ice: linear-gradient(135deg, oklch(0.88 0.14 220), oklch(0.62 0.18 240));
+  --gradient-fireice: linear-gradient(90deg, oklch(0.68 0.21 40) 0%, oklch(0.30 0.05 260) 50%, oklch(0.78 0.16 235) 100%);
+  --gradient-hero: linear-gradient(180deg, oklch(0.10 0.01 260 / 0.55) 0%, oklch(0.06 0.01 260 / 0.95) 100%);
+  --gradient-radial: radial-gradient(ellipse at top, oklch(0.18 0.03 260) 0%, oklch(0.06 0.01 260) 70%);
+  --shadow-fire: 0 20px 60px -20px oklch(0.68 0.21 40 / 0.55);
+  --shadow-ice: 0 20px 60px -20px oklch(0.78 0.16 235 / 0.5);
+  --shadow-elegant: 0 30px 80px -30px oklch(0 0 0 / 0.8);
+  --shadow-inset-fire: inset 0 1px 0 0 oklch(0.92 0.15 70 / 0.35);
 }
 
 .dark {
-  --background: oklch(0.13 0.03 255);
-  --foreground: oklch(0.97 0.01 90);
+  --background: oklch(0.06 0.01 260);
+  --foreground: oklch(0.98 0.005 90);
 }
 
 @layer base {
@@ -92,5 +100,76 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.005em; text-transform: none; }
+}
+
+/* ====== Ambient atmospheric FX ====== */
+
+/* Slow drifting embers */
+@keyframes ember-rise {
+  0%   { transform: translate3d(0, 10vh, 0) scale(0.6); opacity: 0; }
+  15%  { opacity: 0.9; }
+  85%  { opacity: 0.7; }
+  100% { transform: translate3d(var(--drift, 20px), -110vh, 0) scale(1); opacity: 0; }
+}
+.ember {
+  position: absolute;
+  bottom: -20px;
+  width: 4px; height: 4px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, oklch(0.92 0.18 65) 0%, oklch(0.7 0.22 40 / 0.7) 50%, transparent 70%);
+  filter: blur(0.5px);
+  box-shadow: 0 0 8px oklch(0.78 0.2 50 / 0.8);
+  animation: ember-rise linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Water ripple pulses */
+@keyframes ripple {
+  0%   { transform: scale(0.2); opacity: 0.55; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.ripple {
+  position: absolute;
+  width: 220px; height: 220px;
+  border-radius: 9999px;
+  border: 1px solid oklch(0.85 0.14 225 / 0.4);
+  box-shadow: inset 0 0 24px oklch(0.85 0.14 225 / 0.15);
+  animation: ripple 7s ease-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Drifting snow */
+@keyframes snow-fall {
+  0%   { transform: translate3d(0, -10vh, 0); opacity: 0; }
+  10%  { opacity: 0.85; }
+  90%  { opacity: 0.7; }
+  100% { transform: translate3d(var(--sway, 40px), 110vh, 0); opacity: 0; }
+}
+.snow {
+  position: absolute;
+  top: -20px;
+  width: 3px; height: 3px;
+  border-radius: 9999px;
+  background: oklch(0.97 0.01 230 / 0.9);
+  box-shadow: 0 0 4px oklch(0.95 0.02 230 / 0.7);
+  animation: snow-fall linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Slow flame glow pulse for backdrop blobs */
+@keyframes flame-breathe {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(1.08); }
+}
+.flame-breathe { animation: flame-breathe 6s ease-in-out infinite; will-change: opacity, transform; }
+
+@keyframes ice-shimmer {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50%      { opacity: 0.45; transform: scale(1.05); }
+}
+.ice-shimmer { animation: ice-shimmer 8s ease-in-out infinite; will-change: opacity, transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ember, .ripple, .snow, .flame-breathe, .ice-shimmer { animation: none; }
 }
