@@ -10,6 +10,11 @@ import partnerTrio from "@/assets/partner-trio.jpeg";
 import partnerWebb from "@/assets/partner-webb.png";
 import partnerUponor from "@/assets/partner-uponor.jpeg";
 import bbbBadge from "@/assets/bbb-accredited.jpeg";
+import workManifold from "@/assets/work-manifold-uponor.jpg";
+import workRadiant from "@/assets/work-radiant-system.jpg";
+import workBoiler from "@/assets/work-boiler-install.jpg";
+import workZoned from "@/assets/work-zoned-heating.jpg";
+import workCopper from "@/assets/work-copper-craftsmanship.jpg";
 import { AmbientFX } from "@/components/AmbientFX";
 import {
   Phone, Wrench, Flame, Snowflake, Droplets, ShieldCheck, Clock, Star,
@@ -42,6 +47,7 @@ function Home() {
       <BrandStrip />
       <WhyUs />
       <About />
+      <Work />
       <Partners />
       <Reviews />
       <CTA />
@@ -62,6 +68,7 @@ function Nav() {
           <a href="#services" className="hover:text-foreground transition">Services</a>
           <a href="#why" className="hover:text-foreground transition">Why Steve</a>
           <a href="#about" className="hover:text-foreground transition">About</a>
+          <a href="#work" className="hover:text-foreground transition">Our Work</a>
           <a href="#reviews" className="hover:text-foreground transition">Reviews</a>
           <a href="#contact" className="hover:text-foreground transition">Contact</a>
         </nav>
@@ -340,6 +347,120 @@ function About() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Work() {
+  const projects = [
+    {
+      src: workCopper,
+      title: "Custom Copper Manifold System",
+      desc: "Multi-zone radiant distribution with hand-bent copper, Taco controls, and Webbstone isolation valves. Engineered for serviceability and built to outlast the building.",
+      tag: "Radiant Heating",
+      span: "lg:col-span-2 lg:row-span-2",
+    },
+    {
+      src: workZoned,
+      title: "High-Efficiency Boiler & Zoning",
+      desc: "Wall-hung Ideal modulating boiler tied into a six-zone Taco panel — quiet, efficient, fully balanced.",
+      tag: "Boiler Install",
+      span: "lg:col-span-2",
+    },
+    {
+      src: workManifold,
+      title: "Uponor PEX Radiant Manifold",
+      desc: "Twin Uponor manifolds feeding in-floor PEX loops with primary copper supply and dedicated zone pumps.",
+      tag: "In-Floor Heat",
+      span: "",
+    },
+    {
+      src: workBoiler,
+      title: "Oil-Fired Boiler & Indirect Tank",
+      desc: "Complete mechanical room rebuild — PurePro Trio boiler, Amtrol indirect water heater, four-zone circulation.",
+      tag: "Whole-House Heating",
+      span: "",
+    },
+    {
+      src: workRadiant,
+      title: "Whole-House Mechanical Build",
+      desc: "Full new-construction install: triple manifolds, primary/secondary loops, Velocity storage tank, and combination boiler.",
+      tag: "New Construction",
+      span: "lg:col-span-2",
+    },
+  ];
+
+  const capabilities = [
+    "Whole-house plumbing & repipes",
+    "High-efficiency boiler installs",
+    "Radiant & in-floor heating systems",
+    "Multi-zone copper manifolds",
+    "Indirect & tankless water heaters",
+    "Central AC & mini-split systems",
+    "Oil furnace service & install",
+    "Mechanical room rebuilds",
+  ];
+
+  return (
+    <section id="work" className="py-28 relative overflow-hidden border-t border-border" style={{ background: "var(--gradient-radial)" }}>
+      <AmbientFX variant="embers+water" intensity={0.6} />
+      <div className="relative max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-12 gap-10 mb-14 items-end">
+          <div className="lg:col-span-7">
+            <div className="text-xs uppercase tracking-[0.3em] text-fire mb-4">Recent work</div>
+            <h2 className="font-display font-bold text-4xl md:text-6xl leading-[1.05] uppercase">
+              The kind of work that gets <span style={{ background: "var(--gradient-fire)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>photographed</span> when it's done.
+            </h2>
+            <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
+              Every job leaves the mechanical room cleaner, quieter, and easier to service than Steve found it. Tight copper, labeled valves, balanced loops — built once, built right.
+            </p>
+          </div>
+          <div className="lg:col-span-5 grid grid-cols-2 gap-2">
+            {capabilities.map((c) => (
+              <div key={c} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-fire-glow" />
+                <span>{c}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[260px] gap-4">
+          {projects.map((p) => (
+            <figure
+              key={p.title}
+              className={`group relative rounded-2xl overflow-hidden border border-border bg-card ${p.span}`}
+              style={{ boxShadow: "var(--shadow-elegant)" }}
+            >
+              <img
+                src={p.src}
+                alt={p.title}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <figcaption className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                <span className="inline-block text-[10px] uppercase tracking-[0.22em] px-2 py-1 rounded border border-fire/40 text-fire-glow bg-black/40 backdrop-blur mb-3">{p.tag}</span>
+                <h3 className="font-display font-bold text-lg md:text-xl uppercase tracking-wide text-white leading-tight">{p.title}</h3>
+                <p className="text-sm text-white/75 mt-2 leading-snug max-w-md">{p.desc}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-2xl border border-border bg-card/60 backdrop-blur">
+          <div className="flex items-center gap-4">
+            <Wrench className="w-8 h-8 text-fire-glow shrink-0" />
+            <div>
+              <div className="font-display font-bold text-xl uppercase tracking-wide">Want work like this in your home?</div>
+              <div className="text-sm text-muted-foreground">Free quotes across NH &amp; VT. Steve answers his own phone.</div>
+            </div>
+          </div>
+          <a href={TEL} className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-primary-foreground shrink-0" style={{ background: "var(--gradient-fire)", boxShadow: "var(--shadow-fire)" }}>
+            <Phone className="w-4 h-4" /> {PHONE}
+          </a>
         </div>
       </div>
     </section>
