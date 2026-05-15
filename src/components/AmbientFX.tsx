@@ -16,8 +16,9 @@ export function AmbientFX({ variant = "embers", intensity = 1 }: { variant?: Var
   // Deterministic pseudo-random based on index — no hydration mismatch
   const rand = (i: number, salt = 0) => {
     const x = Math.sin(i * 9301 + salt * 49297) * 233280;
-    return x - Math.floor(x);
+    return Number((x - Math.floor(x)).toFixed(4));
   };
+  const r = (n: number) => Number(n.toFixed(2));
 
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
