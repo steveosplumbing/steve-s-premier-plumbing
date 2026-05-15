@@ -134,7 +134,7 @@ function Hero() {
               <div className="absolute w-72 h-72 rounded-full blur-3xl flame-breathe" style={{ background: "radial-gradient(circle, oklch(0.7 0.22 40 / 0.5), transparent 65%)" }} />
               <div className="absolute w-72 h-72 rounded-full blur-3xl ice-shimmer" style={{ background: "radial-gradient(circle, oklch(0.78 0.16 235 / 0.45), transparent 65%)", transform: "translate(40%, 30%)" }} />
             </div>
-            <img src={fistFire} alt="Fire fist representing heating services" className="absolute top-4 left-0 w-[78%] -rotate-6 drop-shadow-[0_20px_40px_rgba(255,120,40,0.35)]" />
+            <img src={fistFire} alt="Fire fist representing heating services" className="absolute top-4 left-0 w-[78%] rotate-6 scale-x-[-1] drop-shadow-[0_20px_40px_rgba(255,120,40,0.35)]" />
             <img src={fistWater} alt="Water fist representing plumbing services" className="absolute bottom-2 right-0 w-[78%] rotate-6 drop-shadow-[0_20px_40px_rgba(80,160,255,0.35)]" />
           </div>
         </div>
@@ -358,7 +358,7 @@ function Work() {
     {
       src: workCopper,
       title: "Custom Copper Manifold System",
-      desc: "Multi-zone radiant distribution with hand-bent copper, Taco controls, and Webbstone isolation valves. Engineered for serviceability and built to outlast the building.",
+      desc: "Multi-zone radiant distribution with fully soldered copper joints — no ProPress, no rubber O-rings to fail. Paired with Taco controls and Webbstone isolation valves for a system built to outlast the building.",
       tag: "Radiant Heating",
       span: "lg:col-span-2 lg:row-span-2",
     },
