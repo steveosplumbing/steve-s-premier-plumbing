@@ -358,7 +358,7 @@ function Work() {
     {
       src: workCopper,
       title: "Custom Copper Manifold System",
-      desc: "Multi-zone radiant distribution with hand-bent copper, Taco controls, and Webbstone isolation valves. Engineered for serviceability and built to outlast the building.",
+      desc: "Multi-zone radiant distribution with fully soldered copper joints — no ProPress, no rubber O-rings to fail. Paired with Taco controls and Webbstone isolation valves for a system built to outlast the building.",
       tag: "Radiant Heating",
       span: "lg:col-span-2 lg:row-span-2",
     },
