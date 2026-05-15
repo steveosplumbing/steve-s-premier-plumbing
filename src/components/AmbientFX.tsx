@@ -16,8 +16,9 @@ export function AmbientFX({ variant = "embers", intensity = 1 }: { variant?: Var
   // Deterministic pseudo-random based on index — no hydration mismatch
   const rand = (i: number, salt = 0) => {
     const x = Math.sin(i * 9301 + salt * 49297) * 233280;
-    return x - Math.floor(x);
+    return Number((x - Math.floor(x)).toFixed(4));
   };
+  const r = (n: number) => Number(n.toFixed(2));
 
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -43,11 +44,11 @@ export function AmbientFX({ variant = "embers", intensity = 1 }: { variant?: Var
 
       {/* Embers */}
       {layers.embers.map((_, i) => {
-        const left = rand(i, 1) * 100;
-        const drift = (rand(i, 2) - 0.5) * 120;
-        const dur = 9 + rand(i, 3) * 10;
-        const delay = -rand(i, 4) * dur;
-        const size = 2 + rand(i, 5) * 4;
+        const left = r(rand(i, 1) * 100);
+        const drift = r((rand(i, 2) - 0.5) * 120);
+        const dur = r(9 + rand(i, 3) * 10);
+        const delay = r(-rand(i, 4) * dur);
+        const size = r(2 + rand(i, 5) * 4);
         return (
           <span
             key={`e${i}`}
@@ -66,11 +67,11 @@ export function AmbientFX({ variant = "embers", intensity = 1 }: { variant?: Var
 
       {/* Water ripples */}
       {layers.ripples.map((_, i) => {
-        const top = rand(i, 11) * 90;
-        const left = rand(i, 12) * 90;
-        const dur = 6 + rand(i, 13) * 6;
-        const delay = -rand(i, 14) * dur;
-        const size = 140 + rand(i, 15) * 220;
+        const top = r(rand(i, 11) * 90);
+        const left = r(rand(i, 12) * 90);
+        const dur = r(6 + rand(i, 13) * 6);
+        const delay = r(-rand(i, 14) * dur);
+        const size = r(140 + rand(i, 15) * 220);
         return (
           <span
             key={`r${i}`}
@@ -89,11 +90,11 @@ export function AmbientFX({ variant = "embers", intensity = 1 }: { variant?: Var
 
       {/* Snow */}
       {layers.snow.map((_, i) => {
-        const left = rand(i, 21) * 100;
-        const sway = (rand(i, 22) - 0.5) * 200;
-        const dur = 12 + rand(i, 23) * 14;
-        const delay = -rand(i, 24) * dur;
-        const size = 2 + rand(i, 25) * 3;
+        const left = r(rand(i, 21) * 100);
+        const sway = r((rand(i, 22) - 0.5) * 200);
+        const dur = r(12 + rand(i, 23) * 14);
+        const delay = r(-rand(i, 24) * dur);
+        const size = r(2 + rand(i, 25) * 3);
         return (
           <span
             key={`s${i}`}
